@@ -63,6 +63,10 @@ Login: ```heroku login```
 ##Browsers
 [Chrome](www.google.com/chrome)
 
+[Firefox](https://www.mozilla.org/en-US/firefox/new/)
+
+[Opera](http://www.opera.com/)
+
 ##Text Editor
 [Sublime](http://www.sublimetext.com/3)
 
