@@ -10,6 +10,7 @@ This is something I can consult when I receive a new mac, whether it be personal
 ----
 [Node homepage](https://nodejs.org/en/)
 Update npm
+----
     sudo npm install npm -g
 
 3. Install Editor of Choice
