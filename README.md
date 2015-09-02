@@ -21,10 +21,10 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 and finally run
 ```brew doctor```
 
-###Git
+###Install Git
 ```brew install get```
 
-Install the config
+Install your config:
 ```
 cd ~
 curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
@@ -38,7 +38,7 @@ then update npm
 sudo npm install npm -g
 ```
 
-###3. Install Editor of Choice
+###Install Editor of Choice
 
 [Sublime](http://www.sublimetext.com/3)
 
