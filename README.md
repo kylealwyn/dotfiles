@@ -5,3 +5,7 @@ This is something I can consult when I receive a new mac, whether it be personal
 1. Install Homebrew
 ----
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2. Install Sublime Text
+----
+[Sublime](http://www.sublimetext.com/3)
