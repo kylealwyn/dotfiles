@@ -1,13 +1,12 @@
 ##What is this
 This is something I can consult when I receive a new mac, whether it be personal upgrade or for a new job.
 
-##Steps
-###Install Xcode and Command Line Tools
+##Install Xcode and Command Line Tools
 [Xcode link](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 run ```xcode-select --install``` to install command line tools, with or without xcode downloaded
 
-###Install Homebrew
+##Install Homebrew
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -21,7 +20,7 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 and finally run
 ```brew doctor```
 
-###Install Git
+##Install Git
 ```brew install get```
 
 Install your config:
@@ -29,7 +28,7 @@ Install your config:
 cd ~
 curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
 ```
-###Install Node
+##Install Node
 
 [Node homepage](https://nodejs.org/en/)
 then update npm
@@ -38,7 +37,7 @@ then update npm
 sudo npm install npm -g
 ```
 
-###Install Editor of Choice
+##Install Editor of Choice
 
 [Sublime](http://www.sublimetext.com/3)
 
