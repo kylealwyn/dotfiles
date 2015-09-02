@@ -2,7 +2,7 @@
 This is something I can consult when I receive a new mac, whether it be personal upgrade or for a new job.
 
 ##Xcode & Command Line Tools
-[Xcode link](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+[Download Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 run ```xcode-select --install``` to install command line tools, with or without xcode downloaded
 
@@ -43,10 +43,9 @@ Install: ```brew install mongo```
 
 Run: ```mongod```
 
-Accesss: ```mongo```
+Access: ```mongo```
 
-
-##Rediss
+##Redis
 Install: ```brew install redis```
 
 Run: ```redis-server```
