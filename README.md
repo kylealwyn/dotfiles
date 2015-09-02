@@ -21,18 +21,16 @@ and finally run
 ```brew doctor```
 
 ##Git
-```brew install get```
+Install: ``` brew install git ```
 
-Install config:
+Config:
 ```
 cd ~
 curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
 ```
 
 ##Ruby
-Install RVM:
-
-```curl -L https://get.rvm.io | bash -s stable --ruby```
+Install RVM: ```curl -L https://get.rvm.io | bash -s stable --ruby```
 
 ##Node
 
