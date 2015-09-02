@@ -9,8 +9,7 @@ This is something I can consult when I receive a new mac, whether it be personal
 2. Install Node
 ----
 [Node homepage](https://nodejs.org/en/)
-
-Update npm
+then update npm
 
     sudo npm install npm -g
 
