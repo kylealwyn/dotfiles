@@ -32,7 +32,7 @@ curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
 
 Install: ```brew install node```
 
-Update:``` sudo npm install npm -g ```
+Fresh update: ``` sudo npm install npm -g ```
 
 ##Editor of Choice
 
