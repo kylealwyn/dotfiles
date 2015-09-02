@@ -30,7 +30,6 @@ curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
 ```
 ##Node
 
-[Node homepage](https://nodejs.org/en/)
 Install: ```brew install node```
 
 Update:``` sudo npm install npm -g ```
