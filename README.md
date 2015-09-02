@@ -1,5 +1,4 @@
-##What is this
-This is something I can consult when I receive a new mac, whether it be personal upgrade or for a new job.
+> This is something I can consult when I receive a new mac, whether it be personal upgrade or for a new job.
 
 ##Xcode & Command Line Tools
 [Download Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
