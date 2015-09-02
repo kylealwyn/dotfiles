@@ -7,7 +7,7 @@ This is something I can consult when I receive a new mac, whether it be personal
 
 run ```xcode-select --install``` to install command line tools, with or without xcode downloaded
 
-**1. Install Homebrew**
+###Install Homebrew
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -19,11 +19,17 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 ```
 
 and finally run
-```
-brew doctor
-```
+```brew doctor```
 
-**2. Install Node**
+###Git
+```brew install get```
+
+Install the config
+```
+cd ~
+curl -O https://raw.githubusercontent.com/kalwyn/config/master/.gitconfig
+```
+###Install Node
 
 [Node homepage](https://nodejs.org/en/)
 then update npm
@@ -32,7 +38,7 @@ then update npm
 sudo npm install npm -g
 ```
 
-**3. Install Editor of Choice**
+###3. Install Editor of Choice
 
 [Sublime](http://www.sublimetext.com/3)
 
