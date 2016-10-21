@@ -1,15 +1,31 @@
 [user]
-  name = Kyle Alwyn
-  email = kjalwyn@gmail.com
+	name = Kyle Alwyn
+	email = kjalwyn@gmail.com
 
 [alias]
+  la = "!git config -l | grep alias | cut -c 7-"
   co = checkout
   ci = commit
   st = status
   br = branch
+  stpp = subtree push --prefix
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  cob = checkout -b
+  ac = !git add -A && git commit -m
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  undo = reset HEAD~1 --mixed
+  amend = commit -a --amend
 
+  # Cleans up branches that have been merged to master
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+
+  # See new commits upon a pull
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 [color]
-    ui = auto
+	ui = true
   [color "branch"]
     current = yellow reverse
     local = yellow
@@ -26,3 +42,20 @@
     untracked = cyan
   [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/kyle/.gitignore_global
+
+[credential]
+	helper = osxkeychain
+
+[pull]
+	rebase = true
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[merge]
+	ff = false
