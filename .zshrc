@@ -88,8 +88,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 ## Tools
-
-
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
@@ -113,13 +111,18 @@ alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
 alias resource='source ~/.zshrc'
 alias vi=vim
+
+## Useful Bash Commands
 alias hunt='ack -i --pager="less -R -S -X"'
+alias serve='python -m SimpleHTTPServer 4000'
+avglines () {wc -l **/*.$1 | awk '{if($2 != "total"){s+=$1}} END {print "Average lines: " s/NR " lines"}'}
 
 ## NPM stuff
 alias ni='npm install'
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
 alias nig='npm install --global'
+alias ns='npm start'
 alias nt='npm test'
 alias nit='npm install && npm test'
 alias nk='npm link'
@@ -127,22 +130,10 @@ alias nr='npm run'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
 
-## Git Stuff
-alias log='git log'
-alias diff='git diff'
-alias branch='git branch'
-alias st='git status'
-alias fetch='git fetch'
-alias push='git push origin head'
-alias pull='git pull'
-alias fp='fetch && pull'
-alias recent='git for-each-ref --sort=-committerdate refs/heads/'
-alias branch_new="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'"
-
 ## Server quick starts
 alias ss='script/server'
 alias js='jekyll serve --watch'
-alias serve='python -m SimpleHTTPServer 4000'
+
 alias be='bundle exec'
 
 ## Work Stuff
