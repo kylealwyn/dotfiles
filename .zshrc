@@ -19,6 +19,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
+
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=13
 
@@ -87,8 +88,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 ## Tools
-alias subl='/Applications/sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias edit='subl'                           # edit:         Opens any file in atomime editor
+
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
@@ -96,7 +96,6 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
 alias c='clear'                             # c:            Clear terminal display
-# alias which='type -all'                     # which:        Find executables
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 alias show_options='shopt'                  # Show_options: display bash options settings
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
@@ -105,18 +104,30 @@ alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
-nr () { npm run "$1" }
-ns () { npm start }
 
-## Shortcuts
+## Edit Shortcuts
+alias subl='/Applications/sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias edit='atom'                           # edit:         Opens any file in atomime editor
 alias editgit='edit ~/.gitconfig'
 alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
-alias resource='source ~/.zshrc && echo "Done!"'
+alias resource='source ~/.zshrc'
 alias vi=vim
 alias hunt='ack -i --pager="less -R -S -X"'
 
-## Git commands
+## NPM stuff
+alias ni='npm install'
+alias nis='npm install --save'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nk='npm link'
+alias nr='npm run'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias nlg='npm list --global --depth=0'
+
+## Git Stuff
 alias log='git log'
 alias diff='git diff'
 alias branch='git branch'
@@ -128,21 +139,21 @@ alias fp='fetch && pull'
 alias recent='git for-each-ref --sort=-committerdate refs/heads/'
 alias branch_new="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-## Switch repos
-PROJECTS=~/Projects
-alias d='cd ~/Desktop'
-alias w='cd ${PROJECTS}'
-alias pims='cd ${PROJECTS}/pims'
-alias brochure='cd ${PROJECTS}/brochure'
-alias clinic='cd ${PROJECTS}/clinic'
-
-## Server guick starts
+## Server quick starts
 alias ss='script/server'
 alias js='jekyll serve --watch'
 alias serve='python -m SimpleHTTPServer 4000'
 alias be='bundle exec'
 
-#alias mysql=/Applications/MAMP/Library/bin/mysql
+## Work Stuff
+WORK_DIR=~/Work
+PROJECT_DIR=~/Projects
+alias d='cd ~/Desktop'
+alias w='cd ${WORK_DIR}'
+alias p = 'cd ${PROJECT_DIR}'
+alias pims='cd ${WORK_DIR}/pims'
+alias brochure='cd ${WORK_DIR}/brochure'
+alias clinic='cd ${WORK_DIR}/clinic'
 alias tunnelBeta="ssh -L 6374:127.0.0.1:6374 162.216.42.87"
 alias tunnelQa="ssh -L 8484:127.0.0.1:8484 204.13.108.176"
 
@@ -153,10 +164,17 @@ export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
 export ANDROID_HOME=/Users/kyle/Library/Android/sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
 export DATABASE_URL="mysql://root:root@localhost/pd_api"
+
 # Load NVM
 export NVM_DIR="/Users/kyle/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Load RBENV
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# # Load RBENV
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
+echo "node $(node --version)"
+echo "npm $(npm --version)"
+echo "$(ruby -v)"
+echo "$(git --version)"
+echo "$(python --version)"
