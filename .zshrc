@@ -160,9 +160,8 @@ export DATABASE_URL="mysql://root:root@localhost/pd_api"
 export NVM_DIR="/Users/kyle/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# # Load RBENV
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
 
 echo "node $(node --version)"
 echo "npm $(npm --version)"
