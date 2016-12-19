@@ -131,6 +131,8 @@ alias nk='npm link'
 alias nr='npm run'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias nlg='npm list --global --depth=0'
+alias no='npm outdated --depth=0'
+alias nog='npm outdated --global --depth=0'
 
 ## Server quick starts
 alias ss='script/server'
@@ -156,10 +158,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/opt/local/sbin:~/Librar
 export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
 export ANDROID_HOME=/Users/kyle/Library/Android/sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
-export DATABASE_URL="mysql://root:root@localhost/pd_api"
 
 # Load NVM
-export NVM_DIR="/Users/kyle/.nvm"
+export NVM_DIR=/Users/kyle/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
