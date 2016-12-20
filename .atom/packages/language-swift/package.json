@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+        "spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/apm-install-dir-116919-26639-1wtufcn"
+    ]
+  ],
+  "_from": "../d-116919-26639-nfgajb/package.tgz",
+  "_id": "language-swift@0.4.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/language-swift",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+    "spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-116919-26639-nfgajb/package.tgz",
+  "_shasum": "ba2bee40c028c30fc15897ab02125abd3db002c1",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-116919-26639-nfgajb/package.tgz",
+  "_where": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/apm-install-dir-116919-26639-1wtufcn",
+  "bugs": {
+    "url": "https://github.com/darinmorrison/atom-language-swift/issues"
+  },
+  "dependencies": {},
+  "description": "Swift language support in Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">= 0.100.0"
+  },
+  "homepage": "https://github.com/darinmorrison/atom-language-swift",
+  "license": "MIT",
+  "name": "language-swift",
+  "optionalDependencies": {},
+  "readme": "# Swift language support in Atom\n\nAdds syntax highlighting to Swift files in Atom.\n\nContributions are greatly appreciated. Please fork this repository and open an pull request to add snippets, make grammar tweaks, etc.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darinmorrison/atom-language-swift.git"
+  },
+  "version": "0.4.0"
+}

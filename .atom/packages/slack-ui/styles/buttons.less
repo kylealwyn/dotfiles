@@ -1,0 +1,87 @@
+@import "ui-variables";
+@import "ui-mixins";
+
+.btn-background (@color, @hover-color, @selected-color, @border-color, @text-color, @text-color-hover) {
+  @border-shadow: inset 0 0 0 1px @border-color;
+  @active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  color: @text-color;
+  background-color: @color;
+
+  &:hover {
+    color: @text-color-hover;
+    background-color: darken(@hover-color, 15%);
+  }
+  &:active,
+  &.selected:hover:active {
+    box-shadow: @active-shadow, @border-shadow;
+  }
+  &.selected,
+  &.selected:hover {
+    color: @text-color-selected;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0,.3), @border-shadow;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background-image: -webkit-linear-gradient(darken(@selected-color, 8%), @selected-color);
+  }
+  &.selected:hover {
+    box-shadow: @border-shadow;
+    background-image: -webkit-linear-gradient(@selected-color, darken(@selected-color, 8%));
+  }
+}
+
+.btn-variant (@color) {
+  @bg: @color;
+  @hover: darken(@color, 10%);
+  @selected: @color;
+  @border: fadeout(darken(@color, 20%), 50%);
+  .btn-background(@bg, @hover, @selected, @border, @text-color-selected, @text-color-selected);
+}
+
+.btn {
+  .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @button-border-color, @text-color, @text-color-highlight);
+}
+
+.btn.btn-primary {
+  .btn-variant(@background-color-info);
+}
+.btn.btn-info {
+  .btn-variant(@background-color-info);
+}
+.btn.btn-success {
+  .btn-variant(@background-color-success);
+}
+.btn.btn-warning {
+  .btn-variant(@background-color-warning);
+}
+.btn.btn-error {
+  .btn-variant(@background-color-error);
+}
+
+.btn-group > .btn.btn.selected {
+  background-color: @button-group-color;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  background-image: none;
+  color: @text-white;
+}
+
+.btn.btn-default {
+  border: 1px solid lightgrey !important;
+}
+
+.btn.uninstall-button {
+  background-color: @background-color-slack-red;
+  color: @text-white;
+
+  &:hover {
+    background-color: darken(@background-color-slack-red, 10%);
+    color: @text-white;
+  }
+}
+.badge {
+  color: @text-white;
+  background: @text-color-info;
+}
+.highlight-info {
+  color: @text-white;
+}

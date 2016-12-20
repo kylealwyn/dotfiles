@@ -1,0 +1,185 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "JavaScript"           +
+project   northem-atom-syntax             +
+file      javascript.less                 +
+version   0.22.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2016              +
++++++++++++++++++++++++++++++++++++++++++++
+
+Defines all language specific syntax highlighting classes for "JavaScript".
+
+[Index]
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Meta
+  > Punctuation
+  > Support
+  > Storage
+  > String
+  > Variable
+
+[Atom Package Dependencies]
+  > language-javascript
+      https://atom.io/packages/language-javascript
+*/
+.source.js {
+  color: @color-syntax-other;
+  /*+---------+
+    + Comment +
+    +---------+*/
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  /*+----------+
+    + Constant +
+    +----------+*/
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.language {
+      color: @color-syntax-constant;
+      font-weight: normal;
+
+      &.boolean {
+        &.true,
+        &.false {
+          color: @color-syntax-keyword;
+        }
+      }
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+    }
+  }
+
+  /*+--------+
+    + Entity +
+    +--------+*/
+  .entity.name {
+    &.type {
+      &.object {
+        color: @color-syntax-class;
+
+        &.firebug {
+          font-style: italic;
+        }
+      }
+      &.instance {
+        color: @color-syntax-javascript-instance;
+      }
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+
+  /*+---------+
+    + Keyword +
+    +---------+*/
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+
+      &.new {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.anchor.regexp {
+        color: @color-syntax-regexp;
+      }
+    }
+  }
+
+  /*+------+
+    + Meta +
+    +------+*/
+  .meta {
+    &.delimiter.method.period,
+    &.delimiter.object.comma,
+    &.brace {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
+  .punctuation.definition {
+    &.comment {
+      color: @color-syntax-comment;
+    }
+    &.parameters,
+    &.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.terminator.statement {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  /*+---------+
+    + Support +
+    +---------+*/
+  .support {
+    &.function {
+      color: @color-syntax-function;
+
+      &.firebug {
+        font-style: italic;
+      }
+    }
+    &.constant {
+      color: @color-syntax-constant;
+      font-weight: normal;
+
+      &.dom {
+        color: @color-syntax-class;
+        font-style: italic;
+      }
+    }
+    &.class {
+      color: @color-syntax-class;
+    }
+  }
+
+  /*+---------+
+    + Storage +
+    +---------+*/
+  .storage {
+    &.modifier,
+    &.type {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  /*+--------+
+    + String +
+    +--------+*/
+  .string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
+    }
+  }
+
+  /*+----------+
+    + Variable +
+    +----------+*/
+  .variable.language {
+    color: @color-syntax-keyword;
+  }
+}

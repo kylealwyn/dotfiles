@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+        "spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/apm-install-dir-1161119-6834-1vvb6lj"
+    ]
+  ],
+  "_from": "../d-1161119-6834-y47opx/package.tgz",
+  "_id": "tool-bar-almighty@0.8.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/tool-bar-almighty",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+    "spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1161119-6834-y47opx/package.tgz",
+  "_shasum": "be55ee8407e42caa20a656fd4f286e4581ddef9f",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/d-1161119-6834-y47opx/package.tgz",
+  "_where": "/private/var/folders/cp/n6z0yz3x75gdz5lkf4v766ph0000gn/T/apm-install-dir-1161119-6834-1vvb6lj",
+  "bugs": {
+    "url": "https://github.com/varemenos/atom-toolbar-almighty/issues"
+  },
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
+  },
+  "dependencies": {},
+  "description": "A tool-bar plugin that adds an 'almighty toolbar' with many commonly used actions",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/varemenos/atom-toolbar-almighty#readme",
+  "keywords": [
+    "toolbar",
+    "tool-bar"
+  ],
+  "license": "MIT",
+  "main": "./lib/tool-bar-almighty",
+  "name": "tool-bar-almighty",
+  "optionalDependencies": {},
+  "packageDependencies": {
+    "tool-bar": "0.1.9"
+  },
+  "readme": "Toolbar Almighty - a tool-bar plugin\n\n> A tool-bar plugin that adds many commonly used actions in the tool-bar.\n\n## Toolbar entries\n\n![screenshot](https://rawgit.com/varemenos/atom-toolbar-almighty/master/screenshot.png)\n\nAvailable toolbar buttons:\n\n* open file\n* open folder\n* save file\n* open git-control _(missing from the screenshot) (requires `git-control` package)_\n* open git projects _(requires `git-projects` package)_\n* list projects _(requires `project-manager` package)_\n* -\n* split screen horizontally\n* split screen vertically\n* -\n* git merge conflicts _(requires `merge-conflicts` package)_\n* toggle fullscreen\n* toggle tree-view\n* toggle minimap _(requires `minimap` package)_\n* -\n* auto indent\n* fold all\n* unfold all\n* -\n* reload window\n* toggle devtools\n* settings\n\n__Note__: The toolbar buttons that require other packages will only appear if you have those packages installed\n\n## Installation\n\nFirst you have to install the `tool-bar` package which is required:\n\n```bash\napm install tool-bar\n```\n\nThen you install the `tool-bar-almighty` package:\n\n```bash\napm install tool-bar-almighty\n```\n\n## Options\n\n1. You have the ability to include [custom entries](https://github.com/varemenos/atom-toolbar-almighty#custom-entries).\n2. You also have the ability to load the [suggested defaults](https://github.com/varemenos/atom-toolbar-almighty#toolbar-entries) along side your custom entries, or only the custom entries.\n\n## Custom entries\n\nYou have the ability to include custom entries in the tool-bar-almighty by enabling the option in the package settings and entering a path relative to your `.atom` directory (that contains the entries you want to add).\n\nThe file must be in JSON format that contains an Array of entries.\n\n### Format\n\nThe format is based on [tool-bar's](https://github.com/suda/tool-bar#example) but include 2 extra properties.\n\n1. `type` indicates whether the entry is a `button` or a `spacer`\n2. `dependency` indicates whether a button's package is not installed by default in Atom and should only be displayed if it's package is installed.\n\n### Example\n\n* Create a file inside `.atom`'s directory, in this case `~/.atom/custom_entries.json`\n* The tool-bar-almighty setting's value must match the filename mentioned above `custom_entries.json` (relative to the `.atom` directory)\n* The content of the file should look like the following:\n\n```json\n[\n  {\n    \"type\": \"button\",\n    \"tooltip\": \"Open File\",\n    \"callback\": \"application:open-file\",\n    \"icon\": \"document-text\",\n    \"iconset\": \"ion\"\n  },\n  {\n    \"type\": \"spacer\"\n  },\n  {\n    \"type\": \"button\",\n    \"tooltip\": \"Open Folder\",\n    \"callback\": \"application:open-folder\",\n    \"icon\": \"folder\",\n    \"iconset\": \"ion\"\n  },\n  {\n    \"type\": \"button\",\n    \"tooltip\": \"Merge Conflicts\",\n    \"dependency\": \"merge-conflicts\",\n    \"callback\": \"merge-conflicts:detect\",\n    \"icon\": \"code-fork\",\n    \"iconset\": \"fa\"\n  }\n]\n```\n\n## Known Issues / FAQ\n\n* We've decided to remove the term2/term3 entries from the default entries, for more details and a possible fix read [this](https://github.com/varemenos/atom-toolbar-almighty/issues/9) issue's thread.\n* We've decided to only support the JSON format for the custom entries to prevent future formating issues.\n\n## License\n\nThe MIT License\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varemenos/atom-toolbar-almighty.git"
+  },
+  "version": "0.8.1"
+}

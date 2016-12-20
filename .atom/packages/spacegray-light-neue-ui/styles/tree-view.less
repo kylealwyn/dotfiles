@@ -1,0 +1,56 @@
+
+// Tree View
+// -------------------
+
+// Used to explore and open files in the current project.
+// Overrides: atom/tree-view
+
+.tree-view {
+  color: @text-color;
+  background-color: @tree-view-background-color;
+
+  .list-item {
+    &.selected {
+      color: @text-color-selected;
+    }
+    &.selected::before {
+      background-color: @background-color-selected;
+    }
+    &:hover {
+      color: @text-color-highlight;
+    }
+    &:not(:hover) {
+      color: @text-color;
+    }
+    &.status-added{
+      color: @text-color-success;
+    }
+    &.status-ignored{
+      color: @text-color-subtle;
+    }
+    &.status-modified{
+      color: @text-color-warning;
+    }
+    &.status-removed{
+      color: @text-color-error;
+    }
+    &.status-renamed{
+      color: @text-color-info;
+    }
+  }
+  li.status-added > .list-item{
+    color: @text-color-success;
+  }
+  li.status-ignored > .list-item{
+    color: @text-color-subtle;
+  }
+  li.status-modified > .list-item{
+    color: @text-color-warning;
+  }
+  li.status-removed > .list-item{
+    color: @text-color-error;
+  }
+  li.status-renamed > .list-item{
+    color: @text-color-info;
+  }
+}

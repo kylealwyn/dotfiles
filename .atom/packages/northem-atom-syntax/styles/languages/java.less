@@ -1,0 +1,149 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Java"                 +
+project   northem-atom-syntax             +
+file      java.less                       +
+version   0.22.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2016              +
++++++++++++++++++++++++++++++++++++++++++++
+
+Defines all language specific syntax highlighting classes for "Java".
+
+[Index]
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Meta
+  > Punctuation
+  > Storage
+  > String
+  > Variable
+
+[Atom Package Dependencies]
+  > language-java
+      https://atom.io/packages/language-java
+*/
+.source.java {
+  color: @color-syntax-other;
+  /*+---------+
+    + Comment +
+    +---------+*/
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  /*+----------+
+    + Constant +
+    +----------+*/
+  .constant {
+    &.variable,
+    &.other {
+      color: @color-syntax-constant;
+      font-weight: bold;
+      font-style: italic;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  /*+--------+
+    + Entity +
+    +--------+*/
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.class {
+      color: @color-syntax-class;
+      font-weight: bold;
+    }
+  }
+
+  /*+---------+
+    + Keyword +
+    +---------+*/
+  .keyword {
+    &.other {
+      &.package,
+      &.import {
+        color: @color-syntax-import;
+        font-weight: bold;
+      }
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  /*+------+
+    + Meta +
+    +------+*/
+  .meta.method-call {
+    .meta.method {
+      color: @color-syntax-function;
+    }
+  }
+
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
+  .punctuation {
+    &.definition {
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.method-parameters {
+        color: @color-syntax-variable;
+      }
+    }
+    &.terminator {
+      color: @color-syntax-keyword;
+    }
+    &.section {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  /*+---------+
+    + Storage +
+    +---------+*/
+  .storage {
+    &.modifier {
+      color: @color-syntax-keyword;
+
+      &.package,
+      &.import {
+        color: @color-syntax-java-package;
+      }
+    }
+    &.type {
+      color: @color-syntax-class;
+
+      &.annotation {
+        color: @color-syntax-java-annotation;
+      }
+    }
+  }
+
+  /*+--------+
+    + String +
+    +--------+*/
+  .string {
+    color: @color-syntax-string;
+  }
+
+  /*+----------+
+    + Variable +
+    +----------+*/
+  .variable.language {
+    color: @color-syntax-keyword;
+  }
+}

@@ -1,0 +1,106 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "9cf2c109-9f16-425f-81c3-ebcf7e98084f"
+    general:
+      _analyticsUserId: "0fb99841-062c-4c2a-bc0f-579ef6872b37"
+  "atom-material-ui":
+    colors:
+      genAccent: true
+      paintCursor: true
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      noTabMinWidth: false
+    treeView:
+      blendTabs: true
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
+  "atom-ternjs":
+    displayAboveSnippets: true
+    useSnippets: true
+  core:
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "git-history"
+      "git-log"
+    ]
+    ignoredNames: [
+      "node_modules"
+      "bower_components"
+    ]
+    projectHome: "/Users/Kyle/Projects"
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Fira Code"
+    fontSize: 12
+    invisibles: {}
+    lineHeight: 1.6
+    preferredLineLength: 120
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "a10a243e-b2f2-19f4-1013-214ea7f0d249"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "git-history": {}
+  "highlight-line":
+    enableBackgroundColor: false
+    underline: "dashed"
+  "imdone-atom": {}
+  jshint:
+    supportLintingJsx: true
+  "language-babel":
+    autoIndentJSX: true
+    suppressTranspileOnSaveMessages: false
+  linter:
+    errorPanelHeight: 24
+  "linter-jshint": {}
+  "node-debugger": {}
+  "one-dark-ui":
+    fontSize: 12
+  react: {}
+  "ruby-test":
+    rspecAllCommand: "spring rspec --tty spec"
+    rspecFileCommand: "spring rspec --tty {relative_path}"
+    specFramework: "rspec"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "sync-settings":
+    _analyticsUserId: "f72c14a2-0fa6-401a-b5ff-cbb90fad74ef"
+    _lastBackupHash: "c4d255c458638ce69e369bd6abf4c0336950260f"
+    analytics: false
+    gistId: "ad4f4ae4e7b5d81cf613d13a41a6c1b7"
+    personalAccessToken: " 5e463fdb981f7904acf10e862159a186c33f9979"
+  "tool-bar":
+    iconSize: "16px"
+    position: "Right"
+  "tree-view": {}
+  ui:
+    fontFamily: "Fira Code"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".babel.regexp.source":
+  editor:
+    preferredLineLength: 120
+".css.source.styled":
+  editor:
+    preferredLineLength: 120
+".js.jsx.source":
+  editor:
+    preferredLineLength: 120
+".languagebabel.ttlextension":
+  editor:
+    preferredLineLength: 120

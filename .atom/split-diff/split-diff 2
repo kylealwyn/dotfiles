@@ -1,0 +1,53 @@
+{
+  "name": "maester",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "open:ios": "open ios/*.xcodeproj",
+    "open:android": "open android studio brooo",
+    "run:android": "react-native run-android",
+    "run:ios": "react-native run-ios",
+    "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output ios/main.jsbundle",
+    "link": "rnpm link",
+    "lint": "eslint source test *.js",
+    "test": "mocha --recursive --compilers js:babel-core/register -r test/setup",
+    "cover": "nyc npm test",
+    "remotedev": "remotedev-debugger --injectserver",
+    "postinstall": ""
+  },
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "react": "~15.3.1",
+    "react-mixin": "^2.0.2",
+    "react-native": "^0.35.0",
+    "react-native-animatable": "^0.6.1",
+    "react-native-collapsible": "^0.7.0",
+    "react-native-gallery": "0.0.17",
+    "react-native-google-analytics-bridge": "^3.1.0",
+    "react-native-responsive-image": "^1.3.0",
+    "react-native-storage": "^0.1.4",
+    "react-native-tab-navigator": "^0.3.3",
+    "react-native-vector-icons": "^2.1.0",
+    "react-redux": "^4.4.5",
+    "react-timer-mixin": "^0.13.3",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
+    "redux-thunk": "^2.1.0",
+    "remote-redux-devtools": "^0.4.9"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.6.8",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.7.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-react": "^6.4.1",
+    "flow-bin": "^0.31.1",
+    "request": "^2.75.0"
+  },
+  "rnpm": {
+    "assets": [
+      "source/assets/fonts"
+    ]
+  }
+}

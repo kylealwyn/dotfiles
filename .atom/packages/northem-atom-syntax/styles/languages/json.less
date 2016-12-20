@@ -1,0 +1,88 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "JSON"                 +
+project   northem-atom-syntax             +
+file      json.less                       +
+version   0.22.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2016              +
++++++++++++++++++++++++++++++++++++++++++++
+
+Defines all language specific syntax highlighting classes for "JSON".
+
+[Index]
+  > Constant
+  > Meta
+
+[Atom Package Dependencies]
+  > language-json
+      https://atom.io/packages/language-json
+*/
+.source.json {
+  color: @color-syntax-other;
+  /*+----------+
+    + Constant +
+    +----------+*/
+  .constant {
+    &.language {
+      color: @color-syntax-constant;
+      font-weight: bold;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  /*+------+
+    + Meta +
+    +------+*/
+  .meta.structure.dictionary.json {
+    .string.quoted.json {
+      color: @color-syntax-keyword;
+
+      .punctuation.definition.string {
+        color: @color-syntax-symbol;
+      }
+    }
+    .punctuation.definition.dictionary {
+      color: @color-syntax-symbol;
+    }
+    .meta.structure.dictionary.value.json {
+      .string.quoted.json {
+        color: @color-syntax-string;
+
+        .punctuation.definition.string {
+          color: @color-syntax-symbol;
+        }
+      }
+      .meta.structure.dictionary.json {
+        .string.quoted.json {
+          color: @color-syntax-keyword;
+
+          .punctuation.definition.string {
+            color: @color-syntax-symbol;
+          }
+        }
+        .meta.structure.dictionary.value.json {
+          .string.quoted.json {
+            color: @color-syntax-string;
+
+            .punctuation.definition.string {
+              color: @color-syntax-symbol;
+            }
+          }
+        }
+      }
+    }
+    .meta.structure.array {
+      .punctuation.definition.array {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+}
