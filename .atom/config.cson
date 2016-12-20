@@ -85,6 +85,7 @@
   "tool-bar":
     iconSize: "16px"
     position: "Right"
+  "tool-bar-almighty": {}
   "tree-view": {}
   ui:
     fontFamily: "Fira Code"
