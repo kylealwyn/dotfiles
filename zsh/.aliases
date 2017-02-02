@@ -1,17 +1,9 @@
-WORK_DIR=~/work
-PROJECT_DIR=~/projects
-
 ## Tools
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
 alias c='clear'                             # c:            Clear terminal display
-alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-alias show_options='shopt'                  # Show_options: display bash options settings
-alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
-alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
 ## Edit Shortcuts
@@ -24,10 +16,7 @@ alias reload='source ~/.zshrc'
 alias vi=vim
 alias ag='ag --hidden -S'
 
-## Useful Bash Commands
-# alias hunt='ack -i --pager="less -R -S -X"'
-alias serve='python -m SimpleHTTPServer 4000'
-
+# Npm Commands
 alias ni='npm install'
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
@@ -47,18 +36,22 @@ alias no='npm outdated --depth=0'
 alias nog='npm outdated --global --depth=0'
 
 ## Server quick starts
-alias ss='script/server'
 alias js='jekyll serve --watch'
-
+alias serve='python -m SimpleHTTPServer 4000'
 alias be='bundle exec'
+
+# Directory shortcuts
+WORK_DIR=~/work
+PROJECT_DIR=~/projects
 
 alias d='cd ~/Desktop'
 alias w='cd ${WORK_DIR}'
 alias p='cd ${PROJECT_DIR}'
+
+
+# Work Stuff
+alias tunnelBeta="ssh -L 6374:127.0.0.1:6374 162.216.42.87"
+alias tunnelQa="ssh -L 8484:127.0.0.1:8484 204.13.108.176"
 alias pims='cd ${WORK_DIR}/pims'
 alias brochure='cd ${WORK_DIR}/brochure'
 alias clinic='cd ${WORK_DIR}/clinic'
-alias tunnelBeta="ssh -L 6374:127.0.0.1:6374 162.216.42.87"
-alias tunnelQa="ssh -L 8484:127.0.0.1:8484 204.13.108.176"
-
-alias composer="php /usr/local/bin/composer.phar"

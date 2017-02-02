@@ -13,16 +13,13 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-export ANDROID_HOME=/Users/kyle/Library/Android/sdk
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/opt/local/sbin:$HOME/dotfiles/bin:$HOME/Library/Android/sdk/tools"
-
 # Load Aliases & Functions
 source ~/dotfiles/zsh/.aliases
 source ~/dotfiles/zsh/.functions
+
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:/usr/local/opt/android-sdk/tools"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
@@ -32,7 +29,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rvm/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-echo $PATH
 echo "node $(node --version)"
 echo "npm $(npm --version)"
 echo "$(ruby -v)"
