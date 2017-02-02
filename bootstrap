@@ -6,9 +6,9 @@ xcode-select --install
 echo "\n Install and Set San Francisco as System Font"
 ruby -e "$(curl -fsSL https://raw.github.com/supermarin/YosemiteSanFranciscoFont/master/install)"
 
-echo '\n Bundling Homebrew'
+echo '\n Building Homebrew'
 sudo chown -R $USER /usr/local
-rm -rf /usr/local/Cellar
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle
 brew cleanup
 
