@@ -22,6 +22,7 @@ alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
 alias reload='source ~/.zshrc'
 alias vi=vim
+alias ag='ag --hidden -S'
 
 ## Useful Bash Commands
 # alias hunt='ack -i --pager="less -R -S -X"'
