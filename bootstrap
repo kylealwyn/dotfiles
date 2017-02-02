@@ -1,21 +1,29 @@
 #!/usr/bin/env bash
 
-echo 'Installing Xcode Tools'
+echo '\n Installing Xcode Tools'
 xcode-select --install
 
-echo "Install and Set San Francisco as System Font"
-ruby -e "$(curl -fsSL https://raw.github.com/wellsriley/YosemiteSanFranciscoFont/master/install)"
+echo "\n Install and Set San Francisco as System Font"
+ruby -e "$(curl -fsSL https://raw.github.com/supermarin/YosemiteSanFranciscoFont/master/install)"
 
-echo 'Installing ZSH'
+echo '\n Bundling Homebrew'
+sudo chown -R $USER /usr/local
+rm -rf /usr/local/Cellar
+brew bundle
+brew cleanup
+
+echo '\n Installing ZSH'
+rm -rf ~/.oh-my-zsh
+rm ~/.zshrc
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-ln -sf ./zsh/.zshrc ~/.zshrc
-ln -sf ./zsh/zesty.zsh-theme ~/.oh-my-zsh/themes
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/zsh/theme ~/.oh-my-zsh/themes/zesty.zsh-theme
 chsh -s /bin/zsh
 
-echo 'Setting up git'
-ln -sf ./git/.gitconfig ~/.gitconfig
+echo '\n Setting up git'
+ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
-echo 'Installing NVM'
+echo '\n Installing NVM'
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/creationix/nvm.git "$NVM_DIR"
   cd "$NVM_DIR"
@@ -23,10 +31,6 @@ export NVM_DIR="$HOME/.nvm" && (
 ) && . "$NVM_DIR/nvm.sh"
 nvm install 6
 
-echo 'Installing RVM'
+echo '\n Installing RVM'
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --ruby
-
-echo 'Bundling Homebrew'
-brew bundle
-brew cleanup

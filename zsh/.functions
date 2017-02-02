@@ -2,3 +2,4 @@ mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and ju
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 avglines () {wc -l **/*.$1 | awk '{if($2 != "total"){s+=$1}} END {print "Average lines: " s/NR " lines"}'}
+hunt () {grep -rnw $1 -e $2}

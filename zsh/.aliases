@@ -20,11 +20,11 @@ alias edit='atom'                           # edit:         Opens any file in at
 alias editgit='edit ~/.gitconfig'
 alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
-alias resource='source ~/.zshrc'
+alias reload='source ~/.zshrc'
 alias vi=vim
 
 ## Useful Bash Commands
-alias hunt='ack -i --pager="less -R -S -X"'
+# alias hunt='ack -i --pager="less -R -S -X"'
 alias serve='python -m SimpleHTTPServer 4000'
 
 alias ni='npm install'
