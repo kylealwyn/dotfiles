@@ -1,15 +1,15 @@
-export ZSH=/Users/kyle/.oh-my-zsh
-ZSH_THEME="zesty"
-# DISABLE_AUTO_UPDATE=true
-DISABLE_UPDATE_PROMPT=true
+export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
+export MANPATH="/usr/local/man:$MANPATH"
+ZSH_THEME="zesty"
+ZSH_DISABLE_COMPFIX=true
+DISABLE_AUTO_UPDATE=false
+DISABLE_UPDATE_PROMPT=false
+ENABLE_CORRECTION=true
+COMPLETION_WAITING_DOTS=false
+rm ~/.zcompdump*
 
 plugins=(git)
-
-# User configuration
-export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,7 +17,8 @@ source $ZSH/oh-my-zsh.sh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ANDROID_HOME=/Users/kyle/Library/Android/sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/opt/local/sbin:~/Library/Android/sdk/tools:$PATH
+
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/opt/local/sbin:$HOME/dotfiles/bin:$HOME/Library/Android/sdk/tools"
 
 # Load Aliases & Functions
 source ~/dotfiles/zsh/.aliases
@@ -28,12 +29,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Load RVM
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rvm/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#
-#
-# echo "node $(node --version)"
-# echo "npm $(npm --version)"
-# echo "$(ruby -v)"
-# echo "$(git --version)"
-# echo "$(python --version)"
+
+echo $PATH
+echo "node $(node --version)"
+echo "npm $(npm --version)"
+echo "$(ruby -v)"
+echo "$(git --version)"
+echo "$(python --version)"

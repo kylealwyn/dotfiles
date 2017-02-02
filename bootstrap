@@ -22,6 +22,7 @@ chsh -s /bin/zsh
 
 echo '\n Setting up git'
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
 
 echo '\n Installing NVM'
 export NVM_DIR="$HOME/.nvm" && (
@@ -33,4 +34,5 @@ nvm install 6
 
 echo '\n Installing RVM'
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable --ruby
+curl -sSL https://get.rvm.io | bash -s stable --ruby -- --ignore-dotfiles
+echo "rvm_silence_path_mismatch_check_flag=1" >> ~/.rvmrc # shuts up rvm complaining about not being first in PATH
