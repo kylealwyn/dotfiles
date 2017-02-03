@@ -12,20 +12,21 @@ brew 'openssl'
 brew 'mysql'
 brew 'mongodb'
 brew 'postgresql'
-brew 'unrar'
-brew 'gpg'
-brew 'wget'
-brew 'yarn'
-brew 'youtube-dl'
-brew 'gradle'
-brew 'android-sdk'
-brew 'htop'
+brew 'unrar' # unarchive rar files
+brew 'gpg' # resource signer
+brew 'wget' # better curl
+brew 'yarn' # node package manager
+brew 'youtube-dl' # download youtube vids
+brew 'android-sdk' # android sdk and tools
+brew 'gradle' # android build system
+brew 'htop' # better top
 brew 'watchman'
-brew 'ack'
-brew 'the_silver_searcher'
-brew 'tree'
+brew 'ack' # text search
+brew 'the_silver_searcher' # better ack: ag
+brew 'tree' # directory tree view
 brew 'readline'
-brew 'jpegoptim'
+brew 'jpegoptim' # optimise jpegs
+brew 'terminal-notifier' # macos growl messages from terminal
 
 cask 'google-chrome'
 cask 'google-drive'
