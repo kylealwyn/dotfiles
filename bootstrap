@@ -3,9 +3,6 @@
 echo '\n Installing Xcode Tools'
 xcode-select --install
 
-echo "\n Installing and Set San Francisco as System Font"
-ruby -e "$(curl -fsSL https://raw.github.com/supermarin/YosemiteSanFranciscoFont/master/install)"
-
 echo '\n Building Homebrew'
 sudo chown -R $USER /usr/local
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
