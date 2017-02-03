@@ -19,7 +19,7 @@ source ~/dotfiles/zsh/.functions
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:/usr/local/opt/android-sdk/tools"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
