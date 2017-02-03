@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "repository": "",
+  "homepage": "",
+  "author": "Paul Armstrong <paul@paularmstrongdesigns.com>",
+  "main": "index",
+  "dependencies": {},
+  "engines": {},
+  "scripts": {
+    "test": "",
+    "start": ""
+  }
+}
