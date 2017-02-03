@@ -28,6 +28,7 @@ export NVM_DIR="$HOME/.nvm" && (
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
 ) && . "$NVM_DIR/nvm.sh"
 nvm install 6
+npm install -g gulp bower np nodemon statik electron react-native-cli
 
 echo '\n Installing RVM'
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
