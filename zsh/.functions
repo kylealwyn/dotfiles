@@ -1,5 +1,42 @@
-mkd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
-trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
-ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
+# Makes new Dir and jumps inside
+mkd () { mkdir -p "$1" && cd "$1"; }
+
+# Moves a file to the MacOS trash
+trash () { command mv "$@" ~/.Trash ; }
+
+# Opens any file in MacOS Quicklook Preview
+ql () { qlmanage -p "$*" >& /dev/null; }    # ql:
+
+# Get average number of lines in directory
 avglines () {wc -l **/*.$1 | awk '{if($2 != "total"){s+=$1}} END {print "Average lines: " s/NR " lines"}'}
-hunt () {grep -rniw $1 -e $2}
+
+# Find text in files
+hunt () {
+  grep -rniw $1 -e $2
+}
+
+# Get weather forecast
+weather () {
+  curl wttr.in/$1
+}
+
+function server() {
+	local port="${1:-8000}"
+	open "http://localhost:${port}/" &
+	# statik is good because it won't expose hidden folders/files by default.
+	# npm install -g statik
+	statik --port "$port" .
+}
+
+# Copy w/ progress
+cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
+
+# get gzipped size
+function gz() {
+	echo "orig size    (bytes): "
+	cat "$1" | wc -c
+	echo "gzipped size (bytes): "
+	gzip -c "$1" | wc -c
+}

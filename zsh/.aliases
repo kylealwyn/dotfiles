@@ -1,10 +1,40 @@
 ## Tools
-alias cp='cp -iv'                           # Preferred 'cp' implementation
-alias mv='mv -iv'                           # Preferred 'mv' implementation
-alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
-alias c='clear'                             # c:            Clear terminal display
-alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
+alias f='open -a Finder ./'
+alias clr='clear'
+alias dt='tee ~/Desktop/terminalOut.txt'
+alias diskspace_report="df -P -kHl"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias dig="dig +nocmd any +multiline +noall +answer"
+alias fs="stat -f \"%z bytes\""
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
+alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+## System
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+alias chmox='chmod +x'
+alias mkdir='mkdir -pv'
+
+###
+# time to upgrade `ls`
+
+# use coreutils `ls` if possible…
+hash gls >/dev/null 2>&1 || alias gls="ls"
+
+# always use color, even when piping (to awk,grep,etc)
+if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+export CLICOLOR_FORCE=1
+
+# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+alias ls='gls -AFh ${colorflag} --group-directories-first'
+alias lsd='ls -l | grep "^d"' # only directories
+#    `la` defined in .functions
+###
+# `cat` with beautiful colors. requires: sudo easy_install -U Pygments
+alias c='pygmentize -O style=monokai -f console256 -g'
+
 
 ## Edit Shortcuts
 alias subl='/Applications/sublime\ Text.app/Contents/SharedSupport/bin/subl'
@@ -13,8 +43,11 @@ alias editgit='edit ~/.gitconfig'
 alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
 alias reload='source ~/.zshrc'
-alias vi=vim
-alias ag='ag --hidden -S'
+alias vi="vim"
+alias v="vim"
+alias g="git"
+alias ag='ag --follow --hidden'
+alias hosts='sudo edit /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
 # Npm Commands
 alias ni='npm install'
@@ -35,7 +68,7 @@ alias nlg='npm list --global --depth=0'
 alias no='npm outdated --depth=0'
 alias nog='npm outdated --global --depth=0'
 
-## Server quick starts
+## Server Stuff
 alias js='jekyll serve --watch'
 alias serve='python -m SimpleHTTPServer 4000'
 alias be='bundle exec'
