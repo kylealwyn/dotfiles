@@ -12,6 +12,7 @@ brew 'openssl'
 brew 'mysql'
 brew 'mongodb'
 brew 'postgresql'
+brew 'redis'
 brew 'unrar' # unarchive rar files
 brew 'gpg' # resource signer
 brew 'wget' # better curl
@@ -27,6 +28,7 @@ brew 'tree' # directory tree view
 brew 'readline'
 brew 'jpegoptim' # optimise jpegs
 brew 'terminal-notifier' # macos growl messages from terminal
+brew 'micro' # terminal editor
 
 cask 'google-chrome'
 cask 'google-drive'
@@ -52,3 +54,4 @@ cask 'numi'
 cask 'menubar-stats'
 cask 'avast'
 cask 'android-studio'
+cask 'kap'

@@ -7,9 +7,10 @@ DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=true
 COMPLETION_WAITING_DOTS=false
+MICRO_TRUECOLOR=1
 rm ~/.zcompdump*
 
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,13 +18,15 @@ source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/zsh/.aliases
 source ~/dotfiles/zsh/.functions
 
+# Modify Path
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
-# Load NVM
+# Load NVM & AVN
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 # Load RVM
 export PATH="$HOME/.rvm/bin:$PATH"
