@@ -29,6 +29,7 @@ brew 'readline'
 brew 'jpegoptim' # optimise jpegs
 brew 'terminal-notifier' # macos growl messages from terminal
 brew 'micro' # terminal editor
+brew 'z' # directory changer
 
 cask 'google-chrome'
 cask 'google-drive'

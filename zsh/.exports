@@ -1,0 +1,7 @@
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export PATH="$HOME/.rvm/bin:$PATH"
+
+# Load NVM & AVN
+export NVM_DIR="$HOME/.nvm"

@@ -1,5 +1,14 @@
 # Makes new Dir and jumps inside
-mkd () { mkdir -p "$1" && cd "$1"; }
+mkd () {
+  mkdir -p "$1" && cd "$1";
+}
+
+chpwd() {
+  echo ""
+  local cur_cwd=$(echo $PWD | sed -e "s|^$HOME|~|" -e 's|^/private||')
+  printf "%s⇢ %sEntering %s%s%s\n" $fg_bold[blue] $reset_color $fg_bold[green] $cur_cwd $reset_color
+  ls
+}
 
 # Moves a file to the MacOS trash
 trash () { command mv "$@" ~/.Trash ; }

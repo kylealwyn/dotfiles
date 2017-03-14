@@ -10,26 +10,25 @@ COMPLETION_WAITING_DOTS=false
 MICRO_TRUECOLOR=1
 rm ~/.zcompdump*
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
+# Source all the things
 source $ZSH/oh-my-zsh.sh
-
-# Load Aliases & Functions
+source ~/dotfiles/zsh/.exports
 source ~/dotfiles/zsh/.aliases
 source ~/dotfiles/zsh/.functions
 
-# Modify Path
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+# Load Z
+if command -v brew >/dev/null 2>&1; then
+    # Load rupa's z if installed
+    [ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+fi
 
 # Load NVM & AVN
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 # Load RVM
-export PATH="$HOME/.rvm/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 echo "node $(node --version)"
