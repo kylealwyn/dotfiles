@@ -1,0 +1,80 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.js':
+  'New Angular Module':
+    'prefix': 'ngnew'
+    'body': '''
+      (function () {
+        \'use strict\';
+
+        angular
+          .module(\'${2:module}\')
+          .${3:type}(\'${4:name}\', ${5:name});
+
+        /* @ngInject */
+        function ${1:name}() {
+
+        \\}
+
+      \\})();
+    '''
+  '$log':
+    'prefix': 'nglog'
+    'body': '$log.log($1)'
+  'Then Catch':
+    'prefix': 'thenCatch'
+    'body': '''
+      .then((res) => {
+
+      })
+      .catch((err) => {
+
+      });
+    '''
+
+'.text.html':
+  'Meta Tags':
+    'prefix': 'meta'
+    'body': '''
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Page Title</title>
+
+      <!-- Social -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:url" content="">
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="Alt text for image">
+
+      <meta property="fb:app_id" content="your_app_id">
+      <meta name="twitter:site" content="@website-username">
+
+      <link href="path/to/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    '''

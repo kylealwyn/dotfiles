@@ -1,0 +1,132 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "9cf2c109-9f16-425f-81c3-ebcf7e98084f"
+    general:
+      _analyticsUserId: "0fb99841-062c-4c2a-bc0f-579ef6872b37"
+  "atom-material-ui":
+    colors:
+      abaseColor: "#2196f3"
+      genAccent: true
+      paintCursor: true
+      predefinedColor: "Blue"
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      noTabMinWidth: true
+    treeView:
+      blendTabs: true
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
+  "atom-ternjs":
+    displayAboveSnippets: true
+    useSnippets: true
+  "autocomplete-python":
+    useKite: false
+  core:
+    audioBeep: false
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "git-log"
+      "language-gfm"
+      "atom-beautify"
+      "prettier-atom"
+      "pigments"
+    ]
+    followSymlinks: false
+    ignoredNames: [
+      "node_modules"
+      "bower_components"
+    ]
+    projectHome: "/Users/Kyle/Projects"
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "friendly-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Fira Code"
+    fontSize: 11
+    lineHeight: 1.7
+    preferredLineLength: 120
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "a10a243e-b2f2-19f4-1013-214ea7f0d249"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "git-plus":
+    general:
+      _analyticsUserId: "8144fe19-46f1-4a7a-af8c-e631cb955d98"
+  "highlight-line":
+    enableBackgroundColor: false
+    underline: "dashed"
+  "language-babel":
+    autoIndentJSX: true
+    suppressTranspileOnSaveMessages: false
+  linter:
+    errorPanelHeight: 56
+  "linter-flow":
+    executablePath: "./node_modules/.bin/flow"
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap:
+    moveCursorOnMinimapClick: true
+    scrollAnimation: true
+  "mocha-test-runner": {}
+  navigate:
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+    tabSizing: false
+  "northem-dark-atom-ui":
+    tabSizing: false
+  "northem-light-atom-ui":
+    tabSizing: false
+  "one-light-ui":
+    fontSize: 12
+    layoutMode: "Spacious"
+  "prettier-atom":
+    bracketSpacing: false
+    formatOnSave: true
+  "ruby-test":
+    rspecAllCommand: "spring rspec --tty spec"
+    rspecFileCommand: "spring rspec --tty {relative_path}"
+    specFramework: "rspec"
+  "seti-syntax":
+    dynamicColor: false
+  "seti-ui":
+    compactView: true
+    fileIcons: false
+    font: "Default Atom Font"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "symbols-tree-view":
+    zAutoHideTypes: "variable var"
+  "sync-settings":
+    _lastBackupHash: "c065ff60cd252b800817755132edb71b9313a790"
+    analytics: false
+    extraFiles: [
+      "toolbar.cson"
+      "projects.cson"
+    ]
+    gistId: "ad4f4ae4e7b5d81cf613d13a41a6c1b7"
+    personalAccessToken: "df27bd60738654570e53c9377bc7127102733a50"
+    quietUpdateCheck: true
+  "tool-bar":
+    iconSize: "16px"
+    position: "Right"
+  ui:
+    fontFamily: "Fira Code"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
