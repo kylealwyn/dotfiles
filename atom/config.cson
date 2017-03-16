@@ -34,7 +34,6 @@
       "atom-beautify"
       "prettier-atom"
       "pigments"
-      "sync-settings"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -120,16 +119,6 @@
     syncHorizontalScroll: true
   "symbols-tree-view":
     zAutoHideTypes: "variable var"
-  "sync-settings":
-    _lastBackupHash: "c065ff60cd252b800817755132edb71b9313a790"
-    analytics: false
-    extraFiles: [
-      "toolbar.cson"
-      "projects.cson"
-    ]
-    gistId: "ad4f4ae4e7b5d81cf613d13a41a6c1b7"
-    personalAccessToken: "df27bd60738654570e53c9377bc7127102733a50"
-    quietUpdateCheck: true
   "tool-bar":
     iconSize: "16px"
     position: "Right"
