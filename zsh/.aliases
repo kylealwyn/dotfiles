@@ -91,10 +91,3 @@ alias d='cd ~/Desktop'
 alias w='cd ${WORK_DIR}'
 alias p='cd ${PROJECT_DIR}'
 alias coverhound='cd ${WORK_DIR}/coverhound'
-
-# Work Stuff
-alias tunnelBeta="ssh -L 6374:127.0.0.1:6374 162.216.42.87"
-alias tunnelQa="ssh -L 8484:127.0.0.1:8484 204.13.108.176"
-alias pims='cd ${WORK_DIR}/pims'
-alias brochure='cd ${WORK_DIR}/brochure'
-alias clinic='cd ${WORK_DIR}/clinic'
