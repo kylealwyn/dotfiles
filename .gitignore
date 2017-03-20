@@ -8,3 +8,6 @@ atom/.apm
 atom/.node-gyp
 atom/.npm
 atom/packages
+atom/split-diff
+atom/git-time-machine
+atom/recovery

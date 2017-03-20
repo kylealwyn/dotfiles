@@ -31,10 +31,8 @@ fi
 # Load rbenv
 eval "$(rbenv init -)"
 
-echo "node $(node --version)"
-echo "npm $(npm --version)"
-echo "$(ruby -v)"
-echo "$(git --version)"
-echo "$(python --version)"
 
+versions
 quote
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

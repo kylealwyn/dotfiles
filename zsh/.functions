@@ -1,13 +1,13 @@
-# Creates a new directory and jumps inside
+# Makes new Dir and jumps inside
 mkd () {
   mkdir -p "$1" && cd "$1";
 }
 
-# Runs any time we change directories
+# Runs any time we change directo
 chpwd() {
   echo ""
   local cur_cwd=$(echo $PWD | sed -e "s|^$HOME|~|" -e 's|^/private||')
-  printf "%s⇢ %sEntering %s%s%s\n" $fg_bold[blue] $reset_color $fg_bold[green] $cur_cwd $reset_color
+  printf "%s⇢ %sEntering %s%s%s\n\n" $fg_bold[blue] $reset_color $fg_bold[green] $cur_cwd $reset_color
   ls
 }
 
@@ -51,7 +51,7 @@ function gz() {
 	gzip -c "$1" | wc -c
 }
 
-WHO_COLOR="$fg_bold[green]"
+WHO_COLOR="$fg[green]"
 TEXT_COLOR="$fg[white]"
 COLON_COLOR="$fg[white]"
 END_COLOR="\e[m"
@@ -61,6 +61,17 @@ function quote() {
     TXT=$(echo "$Q" | sed -e 's/<\/dt>.*//g' -e 's/.*html//g' -e 's/^[^a-zA-Z]*//' -e 's/<\/a..*$//g')
     W=$(echo "$Q" | sed -e 's/.*\/quotes\///g' -e 's/<.*//g' -e 's/.*">//g')
     if [ "$W" -a "$TXT" ]; then
-      echo "${WHO_COLOR}${W} once said${COLON_COLOR}, ${TEXT_COLOR}“${TXT}”${END_COLOR}"
+      echo "${TEXT_COLOR}“${TXT}”${END_COLOR}"
+      echo "${WHO_COLOR}- ${W}"
     fi
+}
+
+function versions() {
+  echo ""
+  printf "%sChecking versions...%s\n" $fg[yellow] $reset_color
+  echo "node $(node --version)"
+  echo "npm $(npm --version)"
+  echo "$(ruby -v)"
+  echo "$(git --version)"
+  echo "$(python --version)"
 }

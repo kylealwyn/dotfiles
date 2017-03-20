@@ -116,6 +116,7 @@
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
   "symbols-tree-view":
     zAutoHideTypes: "variable var"
