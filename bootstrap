@@ -23,14 +23,18 @@ echo '\n Setting up git'
 ln -sf $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -sf $HOME/dotfiles/git/.gitignore_global $HOME/.gitignore_global
 
+echo '\n Setting up vim'
+ln -sf ~/dotfiles/vim/.vim ~
+ln -sf ~/dotfiles/vim/.vimrc ~
+
 echo '\n Installing NVM'
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/creationix/nvm.git "$NVM_DIR"
   cd "$NVM_DIR"
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
 ) && . "$NVM_DIR/nvm.sh"
-nvm install 6
-npm install -g gulp bower np nodemon statik electron react-native-cli
+nvm install 7
+npm install -g np nodemon statik electron react-native-cli
 
 echo '\n Installing RVM'
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
