@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kyle/work/coverhound'
+let g:netrw_dirhist_2='/Users/kyle/work/coverhound/.git'
+let g:netrw_dirhist_3='/Users/kyle/work/i18n-cli/src/commands'

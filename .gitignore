@@ -1,5 +1,6 @@
 **/.DS_STORE
 zsh/.extra
+
 atom/blob-store
 atom/compile-cache
 atom/dev
@@ -11,3 +12,5 @@ atom/packages
 atom/split-diff
 atom/git-time-machine
 atom/recovery
+
+vim/.vim/plugged

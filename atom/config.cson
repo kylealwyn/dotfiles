@@ -10,11 +10,10 @@
       paintCursor: true
       predefinedColor: "Blue"
     fonts:
-      fontSize: 13
+      fontSize: 15
     tabs:
       compactTabs: true
       noTabMinWidth: true
-      tintedTabBar: true
     treeView:
       blendTabs: true
       compactList: true
@@ -27,6 +26,19 @@
     useKite: false
   core:
     audioBeep: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     destroyEmptyPanes: false
     disabledPackages: [
       "git-log"
@@ -34,6 +46,11 @@
       "atom-beautify"
       "prettier-atom"
       "pigments"
+      "vim-mode-plus"
+      "linter"
+      "flex-tool-bar"
+      "tree-view"
+      "hyperclick"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -49,11 +66,10 @@
     useCustomTitleBar: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 11
+    fontSize: 12
     lineHeight: 1.7
     preferredLineLength: 120
     scrollPastEnd: true
-    showIndentGuide: true
   "exception-reporting":
     userId: "a10a243e-b2f2-19f4-1013-214ea7f0d249"
   "file-watcher":
@@ -64,19 +80,18 @@
   "highlight-line":
     enableBackgroundColor: false
     underline: "dashed"
+  hyperclick: {}
   "language-babel":
     autoIndentJSX: true
     suppressTranspileOnSaveMessages: false
-  linter:
-    errorPanelHeight: 56
+  linter: {}
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
   "linter-ui-default":
-    panelHeight: 80
+    panelHeight: 55
     showPanel: true
     statusBarPosition: "Right"
-  "markdown-preview":
-    useGitHubStyle: true
+  "markdown-preview": {}
   minimap:
     moveCursorOnMinimapClick: true
     scrollAnimation: true
@@ -88,10 +103,24 @@
   "nord-atom-ui":
     darkerFormFocusEffect: true
     tabSizing: false
+  "northem-atom-ui":
+    tabSizing: false
   "northem-dark-atom-ui":
     tabSizing: false
   "northem-light-atom-ui":
     tabSizing: false
+  nuclide:
+    installRecommendedPackages: true
+    "nuclide-adb-logcat": {}
+    "nuclide-file-tree":
+      showOpenFiles: false
+    "nuclide-health": {}
+    "nuclide-home":
+      showHome: false
+    "nuclide-notifications":
+      whenFocused: true
+    "nuclide-python":
+      lintOnFly: true
   "one-light-ui":
     fontSize: 12
     layoutMode: "Spacious"
@@ -125,6 +154,7 @@
     position: "Right"
   ui:
     fontFamily: "Fira Code"
+  "vim-mode-plus": {}
   welcome:
     showOnStartup: false
   whitespace:
