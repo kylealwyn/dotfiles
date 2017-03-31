@@ -1,8 +1,13 @@
 "*":
   "atom-beautify":
-    _analyticsUserId: "9cf2c109-9f16-425f-81c3-ebcf7e98084f"
     general:
-      _analyticsUserId: "0fb99841-062c-4c2a-bc0f-579ef6872b37"
+      _analyticsUserId: "9cf2c109-9f16-425f-81c3-ebcf7e98084f"
+    js:
+      indent_size: 2
+    json:
+      indent_size: 2
+    jsx:
+      indent_size: 2
   "atom-material-ui":
     colors:
       abaseColor: "#2196f3"
@@ -43,14 +48,8 @@
     disabledPackages: [
       "git-log"
       "language-gfm"
-      "atom-beautify"
       "prettier-atom"
       "pigments"
-      "vim-mode-plus"
-      "linter"
-      "flex-tool-bar"
-      "tree-view"
-      "hyperclick"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -68,7 +67,7 @@
     fontFamily: "Fira Code"
     fontSize: 12
     lineHeight: 1.7
-    preferredLineLength: 120
+    preferredLineLength: 80
     scrollPastEnd: true
   "exception-reporting":
     userId: "a10a243e-b2f2-19f4-1013-214ea7f0d249"
@@ -85,6 +84,7 @@
     autoIndentJSX: true
     suppressTranspileOnSaveMessages: false
   linter: {}
+  "linter-eslint": {}
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
   "linter-ui-default":
@@ -109,18 +109,6 @@
     tabSizing: false
   "northem-light-atom-ui":
     tabSizing: false
-  nuclide:
-    installRecommendedPackages: true
-    "nuclide-adb-logcat": {}
-    "nuclide-file-tree":
-      showOpenFiles: false
-    "nuclide-health": {}
-    "nuclide-home":
-      showHome: false
-    "nuclide-notifications":
-      whenFocused: true
-    "nuclide-python":
-      lintOnFly: true
   "one-light-ui":
     fontSize: 12
     layoutMode: "Spacious"
@@ -147,15 +135,15 @@
     rightEditorColor: "green"
     scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
-  "symbols-tree-view":
-    zAutoHideTypes: "variable var"
   "tool-bar":
     iconSize: "16px"
     position: "Right"
   ui:
     fontFamily: "Fira Code"
-  "vim-mode-plus": {}
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  zentabs:
+    maximumOpenedTabs: 3
+    neverCloseUnsaved: true
