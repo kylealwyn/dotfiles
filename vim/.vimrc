@@ -17,7 +17,7 @@ Plug 'leshill/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
-
+Plug 'hail2u/vim-css3-syntax'
 " Themes
 Plug 'w0ng/vim-hybrid'
 Plug 'altercation/vim-colors-solarized'
