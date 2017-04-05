@@ -34,6 +34,8 @@ brew 'rbenv' # ruby version manager
 brew 'fzf' # fuzzy search
 brew 'vim' # vim8
 brew 'calc' # calculator
+brew 'tmux' # terminal multiplexer
+brew 'reattach-to-user-namespace' # osx helper for tmux
 
 cask 'google-chrome'
 cask 'google-drive'
