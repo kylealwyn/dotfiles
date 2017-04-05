@@ -7,10 +7,11 @@ DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=false
 COMPLETION_WAITING_DOTS=false
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 # Source all the things
 source $ZSH/oh-my-zsh.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='colour243'
 source ~/dotfiles/zsh/.exports
 source ~/dotfiles/zsh/.aliases
 source ~/dotfiles/zsh/.functions

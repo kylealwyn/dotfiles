@@ -145,5 +145,4 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   zentabs:
-    maximumOpenedTabs: 3
     neverCloseUnsaved: true
