@@ -35,6 +35,10 @@ if has("termguicolors")
   set termguicolors
 endif
 
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " Set default font
 set guifont=Monaco:h20
 
@@ -50,7 +54,6 @@ let g:enable_bold_font = 1
 colorscheme hybrid_material
 
 set cursorline
-" set colorcolumn=79
 set number
 set so=7
 set mouse=a
