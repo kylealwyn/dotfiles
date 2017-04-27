@@ -15,7 +15,7 @@
       paintCursor: true
       predefinedColor: "Blue"
     fonts:
-      fontSize: 15
+      fontSize: 13
     tabs:
       compactTabs: true
       noTabMinWidth: true
@@ -62,10 +62,10 @@
       "atom-material-ui"
       "friendly-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 12
+    fontSize: 11
     lineHeight: 1.7
     preferredLineLength: 80
     scrollPastEnd: true
@@ -145,4 +145,5 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   zentabs:
+    maximumOpenedTabs: 4
     neverCloseUnsaved: true

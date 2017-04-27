@@ -1,46 +1,43 @@
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-" Plug 'vim-syntastic/syntastic'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
 " Syntax Highlighting
+Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'othree/html5.vim'
 Plug 'mxw/vim-jsx'
 Plug 'leshill/vim-json'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'hail2u/vim-css3-syntax'
+
 " Themes
 Plug 'w0ng/vim-hybrid'
 Plug 'altercation/vim-colors-solarized'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhinz/vim-janah'
 Plug 'mhartington/oceanic-next'
+Plug 'dracula/vim'
 call plug#end()
 
 " Enable pretty colors
 syntax on
 
 " Allow more pretty colors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if has("termguicolors")
   set termguicolors
 endif
-
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
-" Set default font
-set guifont=Monaco:h20
 
 " Set Vim-specific sequences for RGB colors
 if $TERM == "xterm-256color"
@@ -51,7 +48,14 @@ set background=dark
 let g:solarized_termcolors=256
 let g:hybrid_custom_term_colors = 1
 let g:enable_bold_font = 1
-colorscheme hybrid_material
+colorscheme dracula
+
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" Set default font
+set guifont=Fira\ Code:h12
 
 set cursorline
 set number
@@ -103,8 +107,7 @@ let NERDTreeMapActivateNode='<right>'
 let NERDTreeShowHidden=1
 
 " Make CtrlP scan whole directory
-let g:ctrlp_max_files=0
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+map <C-p> :GFiles<CR>
 
 " Always make room for git gutter
 let g:gitgutter_sign_column_always=1
@@ -116,11 +119,6 @@ let g:jsx_ext_required = 0
 let g:ale_sign_error = 'x'
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
-
-" Syntastic Settings
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = '$(npm bin)/eslint'
-let g:syntastic_check_on_open=1
 
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
