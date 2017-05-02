@@ -88,7 +88,7 @@
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
   "linter-ui-default":
-    panelHeight: 55
+    panelHeight: 36
     showPanel: true
     statusBarPosition: "Right"
   "markdown-preview": {}

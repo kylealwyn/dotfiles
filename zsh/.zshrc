@@ -27,9 +27,8 @@ fi
 # Load FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Load NVM & AVN
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+ #Load nodenv
+eval "$(nodenv init -)"
 
 # Load rbenv
 eval "$(rbenv init -)"

@@ -30,12 +30,13 @@ brew 'jpegoptim' # optimise jpegs
 brew 'terminal-notifier' # macos growl messages from terminal
 brew 'micro' # terminal editor
 brew 'z' # directory changer
-brew 'rbenv' # ruby version manager
 brew 'fzf' # fuzzy search
 brew 'vim' # vim8
 brew 'calc' # calculator
 brew 'tmux' # terminal multiplexer
 brew 'reattach-to-user-namespace' # osx helper for tmux
+brew 'rbenv' # ruby version manager
+brew 'nodenv' # node version manager
 
 cask 'google-chrome'
 cask 'google-drive'
