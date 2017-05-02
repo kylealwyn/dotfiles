@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+cd ~/dotfiles
+
+echo '\n Initializing submodules'
+git submodule init
+git submodule update
+
 echo '\n Installing Xcode Tools'
 xcode-select --install
 
