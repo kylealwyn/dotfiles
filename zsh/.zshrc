@@ -1,7 +1,7 @@
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
-ZSH_THEME="zesty"
+ZSH_THEME="geometry/geometry"
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=false
