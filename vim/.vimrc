@@ -44,6 +44,8 @@ if $TERM == "xterm-256color"
   set t_Co=256
 endif
 
+set t_ut=
+
 set background=dark
 let g:solarized_termcolors=256
 let g:hybrid_custom_term_colors = 1

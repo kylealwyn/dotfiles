@@ -1,3 +1,4 @@
+export TERM=xterm-256color
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
@@ -11,7 +12,7 @@ DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=false
 COMPLETION_WAITING_DOTS=false
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # Source all the things
 source $ZSH/oh-my-zsh.sh
