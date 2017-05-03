@@ -1,6 +1,10 @@
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
+GEOMETRY_SYMBOL_PROMPT="❯"                  # default prompt symbol
+GEOMETRY_SYMBOL_PROMPT3="◇"                 # multiline prompts
+GEOMETRY_SYMBOL_EXIT_VALUE="❯"              # displayed when exit value is != 1
+GEOMETRY_SYMBOL_ROOT="❯"                    # when logged in user is root
 ZSH_THEME="geometry/geometry"
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
@@ -11,7 +15,6 @@ plugins=(git zsh-syntax-highlighting)
 
 # Source all the things
 source $ZSH/oh-my-zsh.sh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='colour243'
 source ~/dotfiles/zsh/.exports
 source ~/dotfiles/zsh/.aliases
 source ~/dotfiles/zsh/.functions
