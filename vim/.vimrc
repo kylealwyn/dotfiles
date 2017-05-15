@@ -24,40 +24,36 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Themes
 Plug 'w0ng/vim-hybrid'
-Plug 'altercation/vim-colors-solarized'
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhinz/vim-janah'
 Plug 'mhartington/oceanic-next'
 Plug 'dracula/vim'
+Plug 'rakr/vim-one'
 call plug#end()
 
 " Enable pretty colors
-syntax on
+syntax enable
+
+" Set Vim-specific sequences for RGB colors
+set t_Co=256
+
+" Disable background erase
+set t_ut=
 
 " Allow more pretty colors
 if has("termguicolors")
   set termguicolors
 endif
 
-" Set Vim-specific sequences for RGB colors
-if $TERM == "xterm-256color"
-  set t_Co=256
-endif
-
-set t_ut=
-
 set background=dark
 let g:solarized_termcolors=256
-let g:hybrid_custom_term_colors = 1
-let g:enable_bold_font = 1
-colorscheme dracula
+let g:hybrid_custom_term_colors=1
+let g:enable_bold_font=1
+let g:airline_theme = 'one'
+colorscheme one
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
-" Set default font
-set guifont=Fira\ Code:h12
 
 set cursorline
 set number

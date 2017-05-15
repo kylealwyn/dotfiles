@@ -60,12 +60,12 @@
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
-      "friendly-syntax"
+      "atom-material-syntax"
     ]
     titleBar: "custom"
   editor:
-    fontFamily: "Fira Code"
-    fontSize: 11
+    fontFamily: "Droid Sans Mono"
+    fontSize: 12
     lineHeight: 1.7
     preferredLineLength: 80
     scrollPastEnd: true

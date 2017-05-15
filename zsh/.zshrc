@@ -1,4 +1,3 @@
-export TERM=xterm-256color
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
