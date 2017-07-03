@@ -3,6 +3,14 @@ mkd () {
   mkdir -p "$1" && cd "$1";
 }
 
+ff() {
+  find . | ag "/.*$1[^/]*$"
+}
+
+fd() {
+  find . -type d | ag "/.*$1[^/]*$"
+}
+
 # Runs any time we change directo
 chpwd() {
   echo ""
