@@ -10,6 +10,7 @@ alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 #alias tmux="tmux -2"
 alias findfile="find . -name"
 alias finddir="find . -type d -name"
+alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
 
 ## System
 alias mv='mv -v'
@@ -35,17 +36,18 @@ alias lsd='ls -l | grep "^d"' # only directories
 
 
 ## Edit Shortcuts
-export EDITOR="vim"
+export EDITOR="nvim"
 alias subl='/Applications/sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias edit='vim'
+alias edit=$EDITOR
 alias editgit='edit ~/.gitconfig'
 alias editbash='edit ~/.bash_profile'
 alias editzsh='edit ~/.zshrc'
 alias editvim='edit ~/.vimrc'
 alias edittmux='edit ~/.tmux.conf'
 alias reload='source ~/.zshrc'
-alias vi="vim"
-alias v="vim"
+alias vim="edit"
+alias vi="edit"
+alias v="edit"
 alias g="git"
 alias ag='ag --follow --hidden'
 alias hosts='sudo vim /etc/hosts'

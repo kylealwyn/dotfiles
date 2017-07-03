@@ -61,12 +61,12 @@
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
-      "oceanic-reef-syntax"
+      "cobalt2-syntax"
     ]
     titleBar: "custom"
   editor:
     fontFamily: "Droid Sans Mono"
-    fontSize: 13
+    fontSize: 12
     lineHeight: 1.7
     preferredLineLength: 80
     scrollPastEnd: true
@@ -89,7 +89,7 @@
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
   "linter-ui-default":
-    panelHeight: 36
+    panelHeight: 81
     showPanel: true
     statusBarPosition: "Right"
   "markdown-preview": {}
