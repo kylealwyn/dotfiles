@@ -5,6 +5,8 @@ GEOMETRY_SYMBOL_PROMPT="❯"                  # default prompt symbol
 GEOMETRY_SYMBOL_PROMPT3="◇"                 # multiline prompts
 GEOMETRY_SYMBOL_EXIT_VALUE="❯"              # displayed when exit value is != 1
 GEOMETRY_SYMBOL_ROOT="❯"                    # when logged in user is root
+GEOMETRY_COLOR_EXIT_VALUE="red"
+GEOMETRY_COLOR_DIR="cyan"
 ZSH_THEME="geometry/geometry"
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
