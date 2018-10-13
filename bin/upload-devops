@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+ROOT_PATH = "/Users/kyle/projects/heydoctor/devops"
+DATE=`date +%Y%m%d%H%M%S`.chomp
+HASH=`cd #{ROOT_PATH}; git rev-parse HEAD`.chomp
+FILE="devops-#{DATE}-#{HASH}.tar.gz".chomp
+
+Dir.chdir(ROOT_PATH) do
+  `export AWS_PROFILE=sappira-development`
+  `tar -czf /tmp/devops/#{FILE} --exclude .git --exclude-from=#{ROOT_PATH}/.gitignore -C #{ROOT_PATH}/.. devops/`
+  `aws s3 cp /tmp/devops/#{FILE} s3://heydoctor-releases/devops/`
+end

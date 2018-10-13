@@ -7,3 +7,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/themes/pure"]
+	path = zsh/themes/pure
+	url = git@github.com:sindresorhus/pure

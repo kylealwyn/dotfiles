@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+require 'shell-spinner'
+require 'highline'
+require 'json'
+
+cli = HighLine.new
+
+bastion_map = {
+  "heydoctor": {
+    "alpha": 'bastion.heydoctor.xyz',
+    "demo": 'bastion.demo.heydoctor.xyz',
+    "production": 'bastion.heydoctor.co',
+  },
+  "clubroom": {
+    "staging": 'bastion.clubroom.heydoctor.xyz',
+    "production": "bastion.clubroom.heydoctor.co"
+  },
+  "dearbrightly": {
+    "staging": 'bastion.dearbrightly.heydoctor.xyz',
+    "production": "bastion.dearbrightly.heydoctor.co"
+  }
+}
+
+project = cli.choose do |menu|
+  menu.prompt = "Which project? [heydoctor] "
+  bastion_map.each do |key, array|
+    menu.choice(key)
+  end
+end
+
+env = cli.choose do |menu|
+  menu.prompt = "Which environment? [dev] "
+  bastion_map[project.to_sym].each do |key, array|
+    menu.choice(key)
+  end
+end
+
+ShellSpinner "Fetching #{project} instances..." do
+  @instances = JSON.parse `aws ec2 describe-instances --query \
+  "Reservations[*].Instances[*].[PrivateIpAddress,Tags[?Key=='Role'].Value]" \
+  --filters "Name=tag:Role, Values=web,util,jenkins" "Name=tag:Project, Values=#{project}" "Name=tag:Environment, Values=#{env}" "Name=instance-state-code, Values=16" \
+  --output json`
+end
+
+cli.choose do |menu|
+  menu.prompt = "Which server? "
+  @instances.each do |i|
+    ip = i.first.first
+    tags = i.first.last
+    menu.choice("#{tags[0]} - #{ip}") {
+      system "ssh -J #{bastion_map[project.to_sym][env.to_sym]} #{ip}"
+    }
+  end
+end

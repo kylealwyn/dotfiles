@@ -16,6 +16,9 @@ alias cp='cp -v'
 alias chmox='chmod +x'
 alias mkdir='mkdir -pv'
 
+alias cat="bat"
+alias ping="prettyping --nolegend"
+
 ###
 # time to upgrade `ls`
 
@@ -73,13 +76,12 @@ alias ya='yarn add'
 alias yad='yarn add --dev'
 alias yt='yarn test'
 alias yr='yarn remove'
-alias yo='yarn outdated'
 alias yag='yarn global add'
 alias yog='yarn global outdated'
 
 ## Server Stuff
 alias js='jekyll serve --watch'
-alias serve='python -m SimpleHTTPServer 4000'
+alias pyserver='python -m SimpleHTTPServer 4000'
 alias be='bundle exec'
 alias rs='bundle exec rails s'
 alias rc='bundle exec rails c'

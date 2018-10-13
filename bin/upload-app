@@ -1,0 +1,22 @@
+#!/bin/bash
+
+### THIS WILL GET REPLACED BY JENKINS VARIABLES
+BASE_DIR=~/projects/heydoctor
+AWS_PROFILE=sappira-development
+PROJECT=$1
+ENV=$2
+
+if [ -z "$3" ]
+then
+    PROJECT_PATH=""
+else
+    PROJECT_PATH="/$3"
+fi
+
+DATE=`date +%Y%m%d%H%M%S`
+cd $BASE_DIR/$PROJECT; GIT_HASH=$(git rev-parse HEAD)
+FILE=$PROJECT-$DATE-$GIT_HASH.tgz
+TAR_PATH=/tmp/devops/$FILE
+
+tar -czf $TAR_PATH --exclude .git --exclude node_modules --exclude build --exclude-from=$BASE_DIR/$PROJECT/.gitignore -C $BASE_DIR $PROJECT$PROJECT_PATH/ && echo "compressed to $TAR_PATH"
+aws s3 --profile $AWS_PROFILE cp $TAR_PATH s3://heydoctor-releases/$PROJECT/$FILE

@@ -1,12 +1,10 @@
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
-GEOMETRY_SYMBOL_PROMPT="❯"                  # default prompt symbol
-GEOMETRY_SYMBOL_PROMPT3="◇"                 # multiline prompts
-GEOMETRY_SYMBOL_EXIT_VALUE="❯"              # displayed when exit value is != 1
-GEOMETRY_SYMBOL_ROOT="❯"                    # when logged in user is root
-GEOMETRY_COLOR_EXIT_VALUE="red"
 GEOMETRY_COLOR_DIR="cyan"
+GEOMETRY_SYMBOL_PROMPT="λ"
+GEOMETRY_SYMBOL_EXIT_VALUE="λ"
+PURE_PROMPT_SYMBOL='%F{white}❯%f'
 ZSH_THEME="geometry/geometry"
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
@@ -33,11 +31,23 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
  #Load nodenv
-eval "$(nodenv init -)"
+#eval "$(nodenv init -)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load rbenv
 eval "$(rbenv init -)"
 
-versions
 quote
 
+#autoload -U promptinit; promptinit
+
+#prompt pure
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/kyle/dev/work/api/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kyle/dev/work/api/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/kyle/dev/work/api/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kyle/dev/work/api/node_modules/tabtab/.completions/sls.zsh
