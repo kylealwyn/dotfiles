@@ -1,3 +1,9 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 " Nice functional stuff
 Plug 'tpope/vim-surround'
@@ -7,6 +13,12 @@ Plug 'airblade/vim-gitgutter'
 " Neeeeerd
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+" Automatically open NerdTree if Vim is opened with no arguments
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd VimEnter * wincmd p
+map <C-\> :NERDTreeToggle<CR>
+let NERDTreeMapActivateNode='<right>'
+let NERDTreeShowHidden=1
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -20,33 +32,36 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Lint
 Plug 'w0rp/ale'
+" Ale linter settings
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['tslint']}
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 " Other goodies
 Plug 'skywind3000/asyncrun.vim'
 
 " Syntax Highlighting
-Plug 'vim-airline/vim-airline'
-"Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
-Plug 'othree/html5.vim'
-Plug 'mxw/vim-jsx'
-"Plug 'leshill/vim-json'
-Plug 'tpope/vim-rails'
-Plug 'hail2u/vim-css3-syntax'
-"Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components'
+Plug 'sheerun/vim-polyglot'
+" Emmet Stuff
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
-" Themeu
+" Theme
 Plug 'larsbs/vimterial'
-Plug 'noahfrederick/vim-noctu'
-Plug 'ajmwagar/vim-deus'
-Plug 'ayu-theme/ayu-vim'
-Plug 'jacoborus/tender.vim'
 Plug 'mhartington/oceanic-next'
-Plug 'nightsense/nemo'
 Plug 'morhetz/gruvbox'
-Plug 'junegunn/seoul256.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-airline/vim-airline'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " Theme it up
@@ -70,7 +85,7 @@ let ayucolor="mirage"
 let g:enable_bold_font=1
 hi CursorLine term=bold cterm=bold guibg=Grey30
 let g:airline_theme = 'oceanicnext'
-colorscheme vimterial
+colorscheme ayu
 
 "set t_ut= " Disable background erase
 set cursorline
@@ -112,12 +127,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Automatically open NerdTree if Vim is opened with no arguments
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd VimEnter * wincmd p
-map <C-\> :NERDTreeToggle<CR>
-let NERDTreeMapActivateNode='<right>'
-let NERDTreeShowHidden=1
 
 " Make CtrlP scan whole directory
 map <C-p> :GFiles<CR>
@@ -130,18 +139,9 @@ let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 
-" Ale linter settings
-let g:airline#extensions#ale#enabled = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_fixers = {'javascript': ['eslint']}
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+
 " Autocomplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#flow#flow_bin = 'flow'
 
 set textwidth=120 " new line after 80 characters
 " However, in Git commit messages, let’s make it 72 characters
@@ -151,13 +151,6 @@ set colorcolumn=+1
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
 
-" Emmet Stuff
-let g:user_emmet_leader_key='<Tab>'
-let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
 
 " Run prettier on js file saves
 "autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %

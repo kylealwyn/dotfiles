@@ -4,8 +4,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 GEOMETRY_COLOR_DIR="cyan"
 GEOMETRY_SYMBOL_PROMPT="λ"
 GEOMETRY_SYMBOL_EXIT_VALUE="λ"
-PURE_PROMPT_SYMBOL='%F{white}❯%f'
-ZSH_THEME="geometry/geometry"
+PURE_PROMPT_SYMBOL='%F{white}λ%f'
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=false
@@ -30,24 +29,15 @@ fi
 # Load FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
- #Load nodenv
-#eval "$(nodenv init -)"
+ #Load Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "/usr/local/opt/nvm/nvm.sh"
 
-# Load rbenv
+# Load Ruby Version Manager
 eval "$(rbenv init -)"
 
 quote
 
-#autoload -U promptinit; promptinit
-
-#prompt pure
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/kyle/dev/work/api/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kyle/dev/work/api/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/kyle/dev/work/api/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kyle/dev/work/api/node_modules/tabtab/.completions/sls.zsh
+# Load pure propt
+autoload -U promptinit; promptinit
+prompt pure
