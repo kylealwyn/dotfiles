@@ -83,3 +83,13 @@ function versions() {
   echo "$(git --version)"
   echo "$(python --version)"
 }
+
+function ssh_dev() {
+  assume goodrx
+  ssh -N -L 3307:rds.sappira.xyz:3306 heydoctor-dev.bastion.grxweb.com
+}
+
+function ssh_prod() {
+  assume goodrx
+  ssh -N -L 3307:rds.sappira.com:3306 heydoctor-prod.bastion.grxweb.com
+}

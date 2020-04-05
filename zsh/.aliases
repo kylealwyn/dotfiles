@@ -17,6 +17,7 @@ alias chmox='chmod +x'
 alias mkdir='mkdir -pv'
 
 alias cat="bat"
+alias ping="prettyping --nolegend"
 
 ###
 # time to upgrade `ls`
@@ -85,6 +86,9 @@ alias be='bundle exec'
 alias rs='bundle exec rails s'
 alias rc='bundle exec rails c'
 
+## Kubernetes
+alias k='kubectl'
+
 # Directory shortcuts
 WORK_DIR=~/work
 PROJECT_DIR=~/projects
@@ -97,11 +101,15 @@ alias p='cd ${PROJECT_DIR}'
 export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_SESSION_TTL=12h
 export AWS_ASSUME_ROLE_TTL=1h
+
 unset_aws() {
   for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
 }
 function assume {
   unset_aws
-  eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" ) &&
-  aws --output text --query Arn sts get-caller-identity
+  eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" ) && aws --output text --query Arn sts get-caller-identity
+}
+function unassume {
+	unset_aws
+	aws-vault remove $1 --sessions-only > /dev/null
 }
