@@ -84,6 +84,30 @@ function versions() {
   echo "$(python --version)"
 }
 
+unset_aws() {
+  for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
+}
+function assume {
+  unset_aws
+  eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" ) && aws --output text --query Arn sts get-caller-identity
+}
+function unassume {
+	unset_aws
+	aws-vault remove $1 --sessions-only > /dev/null
+}
+
+function export_aws_env {
+  export AWS_ACCESS_KEY_ID=`cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}'`
+  export AWS_SECRET_ACCESS_KEY=`cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}'`
+  export AWS_SESSION_TOKEN=`cat ~/.aws/credentials | grep aws_session_token | awk '{print $3}'`
+  export AWS_SECURITY_TOKEN=`cat ~/.aws/credentials | grep aws_security_token | awk '{print $3}'`
+}
+
+function goodrx_aws {
+  gimme-aws-creds -m
+  export_aws_env
+}
+
 function ssh_dev() {
   assume goodrx
   ssh -N -L 3307:rds.sappira.xyz:3306 heydoctor-dev.bastion.grxweb.com
@@ -92,4 +116,15 @@ function ssh_dev() {
 function ssh_prod() {
   assume goodrx
   ssh -N -L 3307:rds.sappira.com:3306 heydoctor-prod.bastion.grxweb.com
+}
+
+function aws_login() {
+  aws_logout
+  eval $(aws-okta-processor authenticate --environment --user kalwyn --organization goodrx.okta.com)
+}
+
+function aws_logout() {
+  setopt localoptions rmstarsilent
+  unset_aws
+  rm -rf ~/.aws/boto/cache/*
 }

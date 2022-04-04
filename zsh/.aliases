@@ -9,6 +9,8 @@ alias fs="stat -f \"%z bytes\""
 alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
+alias python=python3
+alias pip=pip3
 
 ## System
 alias mv='mv -v'
@@ -101,15 +103,3 @@ alias p='cd ${PROJECT_DIR}'
 export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_SESSION_TTL=12h
 export AWS_ASSUME_ROLE_TTL=1h
-
-unset_aws() {
-  for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
-}
-function assume {
-  unset_aws
-  eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" ) && aws --output text --query Arn sts get-caller-identity
-}
-function unassume {
-	unset_aws
-	aws-vault remove $1 --sessions-only > /dev/null
-}

@@ -1,10 +1,13 @@
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 export MANPATH="/usr/local/man:$MANPATH"
+
 GEOMETRY_COLOR_DIR="cyan"
 GEOMETRY_SYMBOL_PROMPT="λ"
 GEOMETRY_SYMBOL_EXIT_VALUE="λ"
+
 PURE_PROMPT_SYMBOL='%F{white}λ%f'
+
 DISABLE_AUTO_UPDATE=false
 DISABLE_UPDATE_PROMPT=false
 ENABLE_CORRECTION=false
@@ -36,8 +39,7 @@ export NVM_DIR="$HOME/.nvm"
 # Load Ruby Version Manager
 eval "$(rbenv init -)"
 
-quote
-
-# Load pure propt
+# Load pure prompt
 autoload -U promptinit; promptinit
+zstyle :prompt:pure:path color blue
 prompt pure
