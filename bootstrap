@@ -2,19 +2,6 @@
 
 cd ~/dotfiles
 
-echo '\n Initializing submodules'
-git submodule init
-git submodule update
-
-echo '\n Installing Xcode Tools'
-xcode-select --install
-
-echo '\n Building Homebrew'
-sudo chown -R $USER /usr/local
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew bundle
-brew cleanup
-
 echo '\n Installing ZSH'
 rm -rf ~/.oh-my-zsh
 rm ~/.zshrc
